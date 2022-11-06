@@ -6,17 +6,18 @@ import { Box } from '@mui/material';
 import Videos from './Videos';
 import VideoCard from './VideoCard';
 import { fetchFromAPI } from '../utilities/fetchFromAPI';
+import ChannelCard from './ChannelCard';
 
 const ChannelDetail = () => {
 	const { id } = useParams();
-	const [chennelDetail, setChennelDetail] = useState(null);
+	const [channelDetail, setChannelDetail] = useState(null);
 	const [videos, setVideos] = useState([]);
 
 	console.log(id, videos);
 
 	useEffect(() => {
 		fetchFromAPI(`channels?part=snippet&id=${id}`).then((data) =>
-			setChennelDetail(data?.items[0])
+			setChannelDetail(data?.items[0])
 		);
 
 		fetchFromAPI(`search?channelId=${id}&part=snippet&order=date`).then((data) =>
@@ -24,7 +25,25 @@ const ChannelDetail = () => {
 		);
 	}, [id]);
 
-	return <div>{id}</div>;
+	return (
+		<Box minHeight="95vh">
+			<Box>
+				<div
+					style={{
+						background:
+							'linear-gradient(90deg, rgba(153,8,130,1) 0%, rgba(189,0,157,1) 39%, rgba(0,212,255,1) 100%)',
+						zIndex: 10,
+						height: '300px',
+					}}
+				/>
+				<ChannelCard channelDetail={channelDetail} marginTop="-110px" />
+			</Box>
+			<Box display="flex" p="2">
+				{/* <Box sx={{ mr: { sm: '100px' } }} /> */}
+				<Videos videos={videos} />
+			</Box>
+		</Box>
+	);
 };
 
 export default ChannelDetail;
