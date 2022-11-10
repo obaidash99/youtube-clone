@@ -1,3 +1,4 @@
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { Typography, Card, CardContent, CardMedia } from '@mui/material';
 import { CheckCircle } from '@mui/icons-material';
@@ -40,7 +41,7 @@ const VideoCard = ({
 				</Link>
 				<Link to={snippet?.channelId ? `/channel/${snippet?.channelId}` : demoChannelUrl}>
 					<Typography variant="subtitle2" fontWeight="bold" color="gray">
-						{snippet?.chennelTitle || demoChannelTitle}
+						{snippet?.channelTitle || demoChannelTitle}
 						<CheckCircle sx={{ fontSize: 12, color: 'gray', ml: '5px' }} />
 					</Typography>
 				</Link>
