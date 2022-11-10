@@ -5,6 +5,7 @@ import { Box } from '@mui/material';
 
 import Videos from './Videos';
 import VideoCard from './VideoCard';
+
 import { fetchFromAPI } from '../utilities/fetchFromAPI';
 import ChannelCard from './ChannelCard';
 

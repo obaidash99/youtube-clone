@@ -17,7 +17,7 @@ const VideoDetail = () => {
 			setVideoDetail(data.items[0])
 		);
 
-		fetchFromAPI(`search>part=snippet&relatedToVideoId=${id}&type=video`).then((data) =>
+		fetchFromAPI(`search?part=snippet&relatedToVideoId=${id}&type=video`).then((data) =>
 			setVideos(data.items)
 		);
 	}, [id]);
@@ -39,7 +39,7 @@ const VideoDetail = () => {
 							className="react-player"
 							controls
 						/>
-						<Typography color="#fff" variant="h5" fontWeight="bold" p={2}>
+						<Typography color="#fff" variant="h6" fontWeight="bold"  p={1}>
 							{title}
 						</Typography>
 						<Stack

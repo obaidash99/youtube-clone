@@ -29,13 +29,13 @@ const Feed = () => {
 					selectedCategory={selectedCategory}
 					setSelectedCategory={setSelectedCategory}
 				/>
-				<Typography
+				{/* <Typography
 					className="copyright"
 					variant="body2"
 					sx={{ mt: '1.5', color: '#fff' }}
 				>
 					Copyright 2022 JSM Media
-				</Typography>
+				</Typography> */}
 			</Box>
 
 			<Box p={2} sx={{ overflowY: 'auto', height: '90vh', flex: 2 }}>
@@ -43,7 +43,15 @@ const Feed = () => {
 					{selectedCategory} <span style={{ color: '#f31503' }}>Videos</span>
 				</Typography>
 
-				<Videos videos={videos}/>
+				<Videos videos={videos} />
+				<Typography
+					className="copyright"
+					variant="body2"
+					sx={{ mt: '20px', color: '#fff' }}
+					textAlign="center"
+				>
+					Copyright 2022 Obaida Shurbaji || Design by JSM Media
+				</Typography>
 			</Box>
 		</Stack>
 	);
