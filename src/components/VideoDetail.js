@@ -30,7 +30,7 @@ const VideoDetail = () => {
 	} = videoDetail;
 
 	return (
-		<Box minHeight="95vh">
+		<Box minHeight="92vh">
 			<Stack direction={{ xs: 'column', md: 'row' }}>
 				<Box flex={1}>
 					<Box sx={{ width: '100%', position: 'sticky', top: '86px' }}>
@@ -39,7 +39,7 @@ const VideoDetail = () => {
 							className="react-player"
 							controls
 						/>
-						<Typography color="#fff" variant="h6" fontWeight="bold"  p={1}>
+						<Typography color="#fff" variant="h6" fontWeight="bold" p={1}>
 							{title}
 						</Typography>
 						<Stack
@@ -67,7 +67,11 @@ const VideoDetail = () => {
 					</Box>
 				</Box>
 				<Box px={2} py={{ md: 1, xs: 5 }} justifyContent="center" alignItems="center">
-					<Videos videos={videos} direction="column" />
+					<Videos
+						videos={videos}
+						direction={{ xs: 'row', md: 'column' }}
+						justicyContent="center"
+					/>
 				</Box>
 			</Stack>
 		</Box>

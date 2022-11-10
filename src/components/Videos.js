@@ -3,11 +3,16 @@ import { Stack, Box } from '@mui/material';
 import VideoCard from './VideoCard';
 import ChannelCard from './ChannelCard';
 
-const Videos = ({ videos, direction }) => {
+const Videos = ({ videos, direction, justicyContent }) => {
 	if (!videos?.length) return 'Loading...';
 
 	return (
-		<Stack direction={direction || 'row'} flexWrap="wrap" justifyContent="center" gap={2}>
+		<Stack
+			direction={direction || 'row'}
+			flexWrap="wrap"
+			justifyContent={justicyContent || 'flex-start'}
+			gap={2}
+		>
 			{videos.map((item, index) => (
 				<Box key={index}>
 					{item.id.videoId && <VideoCard video={item} />}

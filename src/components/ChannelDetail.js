@@ -5,7 +5,6 @@ import { Box } from '@mui/material';
 
 import Videos from './Videos';
 import VideoCard from './VideoCard';
-
 import { fetchFromAPI } from '../utilities/fetchFromAPI';
 import ChannelCard from './ChannelCard';
 
@@ -39,7 +38,7 @@ const ChannelDetail = () => {
 			</Box>
 			<Box display="flex" p="2">
 				{/* <Box sx={{ mr: { sm: '100px' } }} /> */}
-				<Videos videos={videos} />
+				<Videos videos={videos} justicyContent="center" />
 			</Box>
 		</Box>
 	);
