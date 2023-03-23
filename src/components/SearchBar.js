@@ -26,7 +26,11 @@ const SearchBar = () => {
 				border: '1px solid #e3e3e3',
 				pl: 2,
 				boxShadow: 'none',
-				mr: { sm: 5 },
+				mr: { xs: 0, sm: 5 },
+				width: { xs: '100%', sm: 'auto' },
+				display: 'flex',
+				flexDirection: { xs: 'column', sm: 'row' },
+				alignItems: 'center',
 			}}
 		>
 			<input
@@ -35,6 +39,11 @@ const SearchBar = () => {
 				placeholder="Search..."
 				value={searchTerm}
 				onChange={(e) => setSearchTerm(e.target.value)}
+				sx={{
+					mb: { xs: 2, sm: 0 },
+					width: { xs: '100%', sm: 'auto' },
+					marginRight: { sm: 2 },
+				}}
 			/>
 			<IconButton type="submit" sx={{ p: '10px', color: 'red' }}>
 				<Search />
